@@ -2,6 +2,9 @@
 
 Tiktok短视频去水印
 
+2021.12.06 更新
++ 增加 nickname 用户昵称
+
 2021.12.03 更新
 + 增加 region 国家代码
 + 增加 origin_cover 静态封面
