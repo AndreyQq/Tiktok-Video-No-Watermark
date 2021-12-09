@@ -2,6 +2,11 @@
 
 Tiktok短视频去水印
 
+# 在线测试
+[```https://www.tikwm.com/```](https://www.tikwm.com/)
+
+# 更新日志
+
 2021.12.09 更新
 + 修改 请求参数 plat 可空 默认值为tik
 + 支持 GET | POST 如果传入相同的key, POST将覆盖GET参数
@@ -26,9 +31,6 @@ Tiktok短视频去水印
 
 2021.12.01 更新
 + 增加 music 音乐MP3
-
-
-### 在线测试：[```https://www.tikwm.com/```](https://www.tikwm.com/)
 
 ### 接口地址：```https://www.tikwm.com/api/```
 
