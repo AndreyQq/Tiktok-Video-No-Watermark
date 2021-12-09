@@ -2,6 +2,13 @@
 
 Tiktok短视频去水印
 
+2021.12.09 更新
++ 修改 请求参数 plat 可空 默认值为tik
++ 支持 GET | POST 如果传入相同的key, POST将覆盖GET参数
++ 更简便的请求方式 如 ```https://www.tikwm.com/api/?url=6996665911927262466```
++ 优化 ```https://vt.tiktok.com/XXXXXX``` 类型链接的查询速度
++ 免费接口限制 1请求/秒 ([查看付费API](https://rapidapi.com/yi005/api/tiktok-video-no-watermark2/))
+
 2021.12.06 更新
 + 增加 nickname 用户昵称
 
@@ -21,19 +28,19 @@ Tiktok短视频去水印
 + 增加 music 音乐MP3
 
 
-### 在线测试：```https://www.tikwm.com/```
+### 在线测试：[```https://www.tikwm.com/```](https://www.tikwm.com/)
 
 ### 接口地址：```https://www.tikwm.com/api/```
 
-### 请求方式：```post```
+### 请求方式：```get|post```
 
 ### 参数
 ```
-plat - 平台（tik）
+plat - 平台（tik） 不传默认为tik
 
-url - 短视频地址
+url - 短视频地址 支持（6996665911927262466 | https://vt.tiktok.com/XXXXXX | https://www.tiktok.com/@umay_874/video/6996665911927262466）等多种链接格式
 ```
-### 返回结果：Json格式
+### 返回结果：Json
 ```json
 {
   "code": 0,
@@ -61,5 +68,4 @@ url - 短视频地址
 
 ## <a href="https://www.buymeacoffee.com/yi005" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
-### 暂不提供Tikwm源码
 #### 如果它对你有帮助，请支持一个star。

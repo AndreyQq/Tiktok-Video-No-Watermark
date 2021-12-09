@@ -3,18 +3,25 @@
  * Tiktok短视频去水印
  * @Author yi005
  * @Date 2021.11.19
- * @Update 2021.12.06
+ * @Update 2021.12.09
  */
 
 
 $api = 'https://www.tikwm.com/api/';
+/**
+ * 支持多种格式
+ * https://vt.tiktok.com/ZSey5hMUR/
+ * https://www.tiktok.com/@umay_874/video/6996665911927262466
+ * 6996665911927262466
+ *
+ **/
 $tikUrl = 'https://www.tiktok.com/@umay_874/video/6996665911927262466';
 $postData = [
-    'plat' => 'tik',   //Tiktok传 tik
+    //'plat' => 'tik',   //Tiktok传 tik  不传默认tiktok
     'url' => $tikUrl
 ];
 
-$response = curl_post($api, $postData);
+$response = curl_request($api . '?' . http_build_query($postData));
 $obj = json_decode($response);
 
 if ($obj->code === 0) {
@@ -23,13 +30,13 @@ if ($obj->code === 0) {
     echo $obj->msg;
 }
 
-function curl_post($url, $postData)
+function curl_request($url, $postData = [])
 {
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_HEADER, false);
-    curl_setopt($curl, CURLOPT_POST, true);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
+    //curl_setopt($curl, CURLOPT_POST, true);
+    //curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
