@@ -36,6 +36,9 @@ Tiktok短视频去水印
 + 增加 music 音乐MP3
 
 #视频去水印
+<details>
+<summary>查看详细</summary>
+
 ### 接口地址：```https://www.tikwm.com/api/```
 
 ### 请求方式：```get|post```
@@ -71,8 +74,12 @@ url - 短视频地址 支持（6996665911927262466 | https://vt.tiktok.com/XXXXX
   }
 }
 ```
+</details>
 
 # 获取用户发布的视频
+
+<details>
+<summary>查看详细</summary>
 ### 接口地址：```https://www.tikwm.com/api/user/posts```
 
 ### 请求方式：```get|post```
@@ -112,6 +119,7 @@ cursor - 0 (hasMore为true时，可传入上次请求返回的cursor加载更多
   }
 }
 ```
+</details>
 
 ## <a href="https://www.buymeacoffee.com/yi005" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
