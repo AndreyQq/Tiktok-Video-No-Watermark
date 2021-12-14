@@ -43,7 +43,7 @@ Tiktok短视频去水印
 # 视频去水印
 
 <details>
-<summary>查看详细</summary>
+<summary>点击查看</summary>
 
 ### 接口地址：```https://www.tikwm.com/api/```
 
@@ -89,7 +89,7 @@ url - 短视频地址 支持（6996665911927262466 | https://vt.tiktok.com/XXXXX
 # 获取用户发布的视频
 
 <details>
-<summary>查看详细</summary>
+<summary>点击查看</summary>
 ### 接口地址：```https://www.tikwm.com/api/user/posts```
 
 ### 请求方式：```get|post```
