@@ -3,8 +3,24 @@
  * Tiktok短视频去水印
  * @Author yi005
  * @Date 2021.11.19
- * @Update 2021.12.09
+ * @Update 2021.12.14
  */
+
+/**
+ * 获取用户发布的视频
+ * 接口限制 1请求/10秒
+ */
+$api = 'https://www.tikwm.com/api/user/posts';
+$unique_id = '@mineodesu69';
+$postData = [
+    'unique_id' => $unique_id,
+    'count' => 10,
+    'cursor' => 0
+];
+
+$response = curl_request($api . '?' . http_build_query($postData));
+$obj = json_decode($response);
+
 
 
 $api = 'https://www.tikwm.com/api/';
