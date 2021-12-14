@@ -72,7 +72,7 @@ url - 短视频地址 支持（6996665911927262466 | https://vt.tiktok.com/XXXXX
 }
 ```
 
-#获取用户发布的视频
+# 获取用户发布的视频
 ### 接口地址：```https://www.tikwm.com/api/user/posts```
 
 ### 请求方式：```get|post```
