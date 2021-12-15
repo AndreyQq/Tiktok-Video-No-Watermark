@@ -2,15 +2,37 @@
 
 Tiktok短视频去水印
 
+```html
+近期将要支持的API
+
+[√] [视频去水印](#视频去水印)
+[√] [获取用户发布的视频](#获取用户发布的视频)
+[√] [获取用户详情](#获取用户详情)
+[×] 获取用户粉丝列表
+[×] 获取任意国家热门视频
+[×] 获取任意国家热门标签
+[×] 通过标签获得视频列表
+[×] 获取视频评论列表
+[×] 搜索视频
+```
 # 在线测试
 
 [```https://www.tikwm.com/```](https://www.tikwm.com/)
 
+
+## <a href="https://www.buymeacoffee.com/yi005" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+#### 如果它对你有帮助，请支持一个star
+
 # 更新日志
+
+2021.12.15 更新
++ 增加 [获取用户详情](#获取用户详情) 接口
++ 增加 video_id 字段 ([获取用户发布的视频](#获取用户发布的视频))
 
 2021.12.14 更新
 
-+ 增加 [获取用户发布的视频](#获取用户发布的视频) 接口 1 请求/10 秒([查看付费API](https://rapidapi.com/yi005/api/tiktok-video-no-watermark2/))
++ 增加 [获取用户发布的视频](#获取用户发布的视频) 接口 限制 1请求/10 秒([查看付费API](https://rapidapi.com/yi005/api/tiktok-video-no-watermark2/))
 
 2021.12.09 更新
 
@@ -138,6 +160,63 @@ cursor - 0 (hasMore为true时，可传入上次请求返回的cursor加载更多
 
 </details>
 
-## <a href="https://www.buymeacoffee.com/yi005" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
-#### 如果它对你有帮助，请支持一个star。
+# 获取用户详情
+
+<details>
+<summary>点击查看</summary>
+
+### 接口地址：```https://www.tikwm.com/api/user/info```
+
+### 请求方式：```get|post```
+
+### 参数
+
+```
+unique_id - 例 @mineodesu69 
+```
+
+### 返回结果：Json
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "user": {
+      "id": "6943972350728700930",
+      "uniqueId": "mineodesu69",
+      "nickname": "こずりん",
+      "avatarThumb": "https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/a1daf088c51a3183dae1513df606f3a8.jpeg?x-expires=1639641600&x-signature=3a7O4IkK4j%2FhTRhKwpZAnbrHBqc%3D",
+      "avatarMedium": "https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/a1daf088c51a3183dae1513df606f3a8.jpeg?x-expires=1639641600&x-signature=qrorwjUDdRWZYDZ%2BnKDNlsGUeXw%3D",
+      "avatarLarger": "https://p16-sign-sg.tiktokcdn.com/aweme/1080x1080/tos-alisg-avt-0068/a1daf088c51a3183dae1513df606f3a8.jpeg?x-expires=1639641600&x-signature=cF3LB9vK7SU%2F2QD%2BL2KBU2d2fVI%3D",
+      "signature": "【毎日投稿🐼】\n→ → → 18時頃\n君にちょうどいい女の子·͜·\n長野出身今は関西\n- ̗̀  SNSまとめ👇🏻   ̖́-",
+      "verified": false,
+      "secUid": "MS4wLjABAAAAx79jlw39ozlKeUQoa9QjOtJBzelssB4fzLwYsL0za6BOjMxA0aYRq4COI3zI7lZ_",
+      "secret": false,
+      "ftc": false,
+      "relation": 0,
+      "openFavorite": true,
+      "bioLink": {
+        "link": "https://lit.link/kozurin69",
+        "risk": 3
+      },
+      "commentSetting": 0,
+      "duetSetting": 0,
+      "stitchSetting": 0,
+      "privateAccount": false,
+      "isADVirtual": false
+    },
+    "stats": {
+      "followingCount": 262,
+      "followerCount": 207900,
+      "heartCount": 1400000,
+      "videoCount": 191,
+      "diggCount": 911,
+      "heart": 1400000
+    }
+  }
+}
+```
+
+</details>
