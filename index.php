@@ -6,6 +6,41 @@
  * @Update 2021.12.14
  */
 
+
+/**
+ * 获取用户关注列表
+ * 接口限制 1请求/1秒
+ */
+$api = 'https://www.tikwm.com/api/user/following';
+$user_id = '6943972350728700930';
+$postData = [
+    'user_id' => '6943972350728700930',
+    'count' => 50,
+    'time' => 0
+];
+
+$response = curl_request($api . '?' . http_build_query($postData));
+$obj = json_decode($response);
+var_dump($obj);
+
+
+/**
+ * 获取用户粉丝列表
+ * 接口限制 1请求/1秒
+ */
+$api = 'https://www.tikwm.com/api/user/followers';
+$user_id = '6943972350728700930';
+$postData = [
+    'user_id' => '6943972350728700930',
+    'count' => 50,
+    'time' => 0
+];
+
+$response = curl_request($api . '?' . http_build_query($postData));
+$obj = json_decode($response);
+var_dump($obj);
+
+
 /**
  * 获取用户发布的视频
  * 接口限制 1请求/10秒
@@ -20,7 +55,7 @@ $postData = [
 
 $response = curl_request($api . '?' . http_build_query($postData));
 $obj = json_decode($response);
-
+var_dump($obj);
 
 
 $api = 'https://www.tikwm.com/api/';

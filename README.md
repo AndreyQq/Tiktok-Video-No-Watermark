@@ -11,7 +11,9 @@ Tiktok短视频去水印
 
 + [x] [获取用户详情](#获取用户详情)
 
-+ [ ] 获取用户粉丝列表
++ [x] [获取关注列表](#获取关注列表)
+
++ [x] [获取粉丝列表](#获取粉丝列表)
 
 + [ ] 获取任意国家热门视频
 
@@ -33,6 +35,10 @@ Tiktok短视频去水印
 #### 如果它对你有帮助，请支持一个star
 
 # 更新日志
+
+2021.12.16 更新
++ 增加 [获取关注列表](#获取关注列表) 接口
++ 增加 [获取粉丝列表](#获取粉丝列表) 接口
 
 2021.12.15 更新
 + 增加 [获取用户详情](#获取用户详情) 接口
@@ -223,6 +229,168 @@ unique_id - 例 @mineodesu69
       "diggCount": 911,
       "heart": 1400000
     }
+  }
+}
+```
+
+</details>
+
+# 获取关注列表
+
+<details>
+<summary>点击查看</summary>
+
+### 接口地址：```https://www.tikwm.com/api/user/following```
+
+### 请求方式：```get|post```
+
+### 参数
+
+```
+user_id - 例 6943972350728700930
+count - 1 ~ 200 默认 50
+time -  hasMore为真时，传入time加载下一页内容
+```
+
+### 返回结果：Json
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "followings": [{
+      "id": "6566729240732614657",
+      "region": "JP",
+      "sec_uid": "MS4wLjABAAAAPjqPx1dTQnBcNVh02MLMStHYmM2fF55gofBYdZj-f45LZW83-W_JS2G6Xsa1XC6p",
+      "unique_id": "yuuna_1210",
+      "nickname": "悠那🌹🌕",
+      "signature": "ﾌｱﾝﾏ🌹🌕Yuuna🇯🇵\nInstagram、YouTube、ファンクラブはこちら⬇️",
+      "avatar": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/91db82467172b59501cf42d89202b2ef~c5_300x300.webp?x-expires=1639742400&x-signature=H3F9uVCyzlk08lO9YooEnGpuK0E%3D",
+      "aweme_count": 206,
+      "follower_count": 1172117,
+      "favoriting_count": 1430,
+      "total_favorited": 6490676,
+      "youtube_channel_title": "Yuuna ユウナ",
+      "youtube_channel_id": "UCQzD8bUstNeFmxAq6BF2VWg",
+      "twitter_name": "Yuuna12100930",
+      "twitter_id": "1428762131105652739"
+    }, {
+      "id": "6821369322682778626",
+      "region": "JP",
+      "sec_uid": "MS4wLjABAAAA2_YTgxz3kLb2XoyC3xOXnosim3gdiqMtFHnjRvckabZJFQ40XBOVttDCiB5cwa3b",
+      "unique_id": "i.am_natsuki_",
+      "nickname": "なっちゅん🤍🍣",
+      "signature": "Age:21   JAPAN🇯🇵TOKYO🗼\n\nLOVELY JAPANESE GIRL💓☕️🥰\n仲良くしてね！",
+      "avatar": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/d23cc59fad7298076477764d4cd7df93~c5_300x300.webp?x-expires=1639742400&x-signature=GOa3WnBctzln5z4MRhUqy%2BrBSJw%3D",
+      "aweme_count": 351,
+      "follower_count": 1404604,
+      "favoriting_count": 1121,
+      "total_favorited": 12353932,
+      "youtube_channel_title": "",
+      "youtube_channel_id": "",
+      "twitter_name": "",
+      "twitter_id": ""
+    }, {
+      "id": "6692395146128589826",
+      "region": "JP",
+      "sec_uid": "MS4wLjABAAAAtavTmHYF26Ja8bA5uOx9axGumONjGfkCflrOu0Hec4iRa6T9WR1ZaR-4Sj_0L2RN",
+      "unique_id": "mi_030616",
+      "nickname": "みｰ．⚠️反転．ピアス⚠️",
+      "signature": "ただの趣味垢\nTwitterに住んでます",
+      "avatar": "https://p77-sign-sg.tiktokcdn.com/tiktok-obj/9302bb57c71286126af3418752a47773~c5_300x300.webp?x-expires=1639742400&x-signature=Txoa6RS1vT5j8jBZxsOD%2B25GEzA%3D",
+      "aweme_count": 174,
+      "follower_count": 72278,
+      "favoriting_count": 12895,
+      "total_favorited": 2596014,
+      "youtube_channel_title": "",
+      "youtube_channel_id": "",
+      "twitter_name": "mi_030616",
+      "twitter_id": "1244569405922500610"
+    }],
+    "time": 1636154865,
+    "hasMore": true
+  }
+}
+```
+
+</details>
+
+# 获取粉丝列表
+
+<details>
+<summary>点击查看</summary>
+
+### 接口地址：```https://www.tikwm.com/api/user/followers```
+
+### 请求方式：```get|post```
+
+### 参数
+
+```
+user_id - 例 6943972350728700930
+count - 1 ~ 200 默认 50
+time -  hasMore为真时，传入time加载下一页内容
+```
+
+### 返回结果：Json
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "followers": [{
+      "id": "6855595320790729733",
+      "region": "ES",
+      "sec_uid": "MS4wLjABAAAACuAvUV44m5Y0vSinq0M74_8h7YaCqAinZIVHVAqAis47mBOais71J3bDMF50qBVE",
+      "unique_id": "lvilla97",
+      "nickname": "Lvilla97",
+      "signature": "",
+      "avatar": "https://p77-sign-va.tiktokcdn.com/musically-maliva-obj/1594805258216454~c5_300x300.webp?x-expires=1639742400&x-signature=osOmDQWdz06hyF5%2BqmncKjvrEqQ%3D",
+      "aweme_count": 0,
+      "follower_count": 251,
+      "favoriting_count": 912,
+      "total_favorited": 0,
+      "youtube_channel_title": "",
+      "youtube_channel_id": "",
+      "twitter_name": "",
+      "twitter_id": ""
+    }, {
+      "id": "7040005798647481350",
+      "region": "MX",
+      "sec_uid": "MS4wLjABAAAAS0rTw7JaFwtC_saKedK5mAz-iFCG7qcZoemEA4tsDUNEhA-25viTJTsm9dm1gycl",
+      "unique_id": "sid90693",
+      "nickname": "victor9069",
+      "signature": "",
+      "avatar": "https://p16-sign-va.tiktokcdn.com/musically-maliva-obj/1594805258216454~c5_300x300.webp?x-expires=1639742400&x-signature=i0LPE4cNks5ZGj0Wqk9f5fi4L3g%3D",
+      "aweme_count": 0,
+      "follower_count": 0,
+      "favoriting_count": 0,
+      "total_favorited": 0,
+      "youtube_channel_title": "",
+      "youtube_channel_id": "",
+      "twitter_name": "",
+      "twitter_id": ""
+    }, {
+      "id": "6581397055238029313",
+      "region": "KH",
+      "sec_uid": "MS4wLjABAAAAvfbRcWHIdDLM87XeKvt62Xm3VCa3iI8UHhH_OyPvAheW-WoDBmPsn-GJn7FONTd-",
+      "unique_id": "conscience184",
+      "nickname": "មនុស្សឈឺចាប់ជាងគេ គឺបង",
+      "signature": "",
+      "avatar": "https://p77-sign-sg.tiktokcdn.com/tiktok-obj/1606787272401921~c5_300x300.webp?x-expires=1639742400&x-signature=x7%2BdsNKfZZhIuFncfyF3QyMBfw4%3D",
+      "aweme_count": 0,
+      "follower_count": 76,
+      "favoriting_count": 3999,
+      "total_favorited": 0,
+      "youtube_channel_title": "",
+      "youtube_channel_id": "",
+      "twitter_name": "",
+      "twitter_id": ""
+    }],
+    "time": 1639657693,
+    "hasMore": true
   }
 }
 ```
