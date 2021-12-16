@@ -308,6 +308,7 @@ time -  hasMore为真时，传入time加载下一页内容
       "twitter_name": "mi_030616",
       "twitter_id": "1244569405922500610"
     }],
+    "total": 262,
     "time": 1636154865,
     "hasMore": true
   }
@@ -389,6 +390,7 @@ time -  hasMore为真时，传入time加载下一页内容
       "twitter_name": "",
       "twitter_id": ""
     }],
+    "total": 208468,
     "time": 1639657693,
     "hasMore": true
   }
