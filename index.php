@@ -8,6 +8,22 @@
 
 
 /**
+ * 获取音乐内的视频
+ * 接口限制 1请求/10秒
+ */
+$api = 'https://www.tikwm.com/api/music/posts';
+$music_id = '6919702697465678594';
+$postData = [
+    'unique_id' => $music_id,
+    'count' => 10,
+    'cursor' => 0
+];
+
+$response = curl_request($api . '?' . http_build_query($postData));
+$obj = json_decode($response);
+var_dump($obj);
+
+/**
  * 获取用户关注列表
  * 接口限制 1请求/1秒
  */

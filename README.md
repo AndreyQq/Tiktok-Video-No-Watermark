@@ -15,6 +15,8 @@ Tiktok短视频去水印
 
 + [x] [获取粉丝列表](#获取粉丝列表)
 
++ [x] [获取音乐内视频列表](#获取音乐内视频列表)
+
 + [ ] 获取任意国家热门视频
 
 + [ ] 获取任意国家热门标签
@@ -35,6 +37,10 @@ Tiktok短视频去水印
 #### 如果它对你有帮助，请支持一个star
 
 # 更新日志
+
+2021.12.17 更新
++增加 music_info 字段 音乐详情
++增加 [获取音乐内视频列表](#获取音乐内视频列表) 接口
 
 2021.12.16 更新
 + 增加 [获取关注列表](#获取关注列表) 接口
@@ -392,6 +398,97 @@ time -  hasMore为真时，传入time加载下一页内容
     }],
     "total": 208468,
     "time": 1639657693,
+    "hasMore": true
+  }
+}
+```
+
+</details>
+
+
+# 获取音乐内视频列表
+
+<details>
+<summary>点击查看</summary>
+
+### 接口地址：```https://www.tikwm.com/api/music/posts```
+
+### 请求方式：```get|post```
+
+### 参数
+
+```
+music_id - 音乐id (music_info.id) 例 6788770563495185158
+count - 10 (最小1 最大35) 获取数量
+cursor - 0 (hasMore为true时，可传入上次请求返回的cursor加载更多)
+```
+
+### 返回结果：Json
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "videos": [{
+      "video_id": "6788814073657167110",
+      "region": "SE",
+      "title": "Hehe",
+      "cover": "https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/1655cf144c9742cf8021f4dc8335c577_1580643957?x-expires=1639767600&x-signature=Bx%2BcjMHwlOoAtBt5yO9rEBY6POA%3D",
+      "origin_cover": "https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/c688071120e74ba2b3d9ee4b4d9317e2_1580643957~tplv-tiktokx-360p.image?x-expires=1639767600&x-signature=lQ4I82DeylhFwECt439E8rEo%2B1w%3D",
+      "play": "https://v16m-default.akamaized.net/e495e6a7541a3003fa17e30f23802f5d/61bce9ab/video/tos/useast2a/tos-useast2a-ve-0068c002/e25a59218514484e8054d8ff999e773f/?a=0&br=1276&bt=638&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=6&er=&ft=w.1R0FGgkag3-I&l=20211217134850010245243136263B3375&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=am05d2hpc29lcjMzNDczM0ApMzQ7NGRoM2Q8Nzc4ODc2OGdlYzJtcWgyYG9fLS1jMTZzczU0NTVhLjMxY15eXzA0YmI6Yw%3D%3D&vl=&vr=",
+      "wmplay": "https://v16m-default.akamaized.net/5dafffef63b9f4eabf805a45f3023d0a/61bce9ab/video/tos/useast2a/tos-useast2a-ve-0068c002/7112c4dc9dd14cb59fcba0801f5b7ee9/?a=0&br=726&bt=363&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=20211217134850010245243136263B3375&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=am05d2hpc29lcjMzNDczM0ApNzNpOWg4OjszNzU0OjM3ZGdlYzJtcWgyYG9fLS1jMTZzcy4yYzVjLjItMy4wYGBgMV86Yw%3D%3D&vl=&vr=",
+      "music": "https://p16-va-default.akamaized.net/obj/musically-maliva-obj/1657416601829430.mp3",
+      "play_count": 137686,
+      "digg_count": 5691,
+      "comment_count": 51,
+      "create_time": 1580643953,
+      "author": {
+        "id": "6659735884131401734",
+        "unique_id": "swe._.amy",
+        "nickname": "𝚛𝚘𝚋𝚕𝚘𝚡<33",
+        "avatar": "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/34f9971cce7ca50e1b5bd57dc5a79d40~c5_300x300.webp?x-expires=1639832400&x-signature=EAmujxGhNjfirsvr0FFer8RthwQ%3D"
+      }
+    }, {
+      "video_id": "6995362373791911170",
+      "region": "JP",
+      "title": "腕からいく派です✳︎",
+      "cover": "https://p16-sign-sg.tiktokcdn.com/obj/tos-alisg-p-0037/a35823938949452a8d00eb7e6db1cf0c_1628734740?x-expires=1639767600&x-signature=%2BJAimNVw%2BmA2YC5cvZzGxuLmO2w%3D",
+      "origin_cover": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/3b2a877f3c85406ea515154c88953558_1628734728~tplv-tiktokx-360p.jpeg?x-expires=1639767600&x-signature=mqx4sxJqJ76JQvPtv8DhX1DF9BU%3D",
+      "play": "https://v16m-default.akamaized.net/0633bf70afa039a8f0899f82d5c8dc74/61bce9ab/video/tos/alisg/tos-alisg-pve-0037/e1580b563bae4005afe785f280f29f93/?a=0&br=3760&bt=1880&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=20211217134850010245243136263B3375&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=Mzp0dDY6Zjw7NzMzODgzNEApOzw0M2g3ZTw6Nzg0PGg7aWcwczFrcjRfNl5gLS1kLy1zc2FeYTJgXzJhYTBiYjBhLTU6Yw%3D%3D&vl=&vr=",
+      "wmplay": "https://v16m-default.akamaized.net/3620638c99e71b41edd795d8bd47d855/61bce9ab/video/tos/alisg/tos-alisg-pve-0037/9d991ef7a70447a0b9274792cd116b37/?a=0&br=2396&bt=1198&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=20211217134850010245243136263B3375&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=Mzp0dDY6Zjw7NzMzODgzNEApNTw4NDo1OjxnNzxpODo4aWcwczFrcjRfNl5gLS1kLy1zczJiLy0yMjAxL14vMWMyMWI6Yw%3D%3D&vl=&vr=",
+      "music": "https://p16-va-default.akamaized.net/obj/musically-maliva-obj/1657416601829430.mp3",
+      "play_count": 14702719,
+      "digg_count": 843921,
+      "comment_count": 6675,
+      "create_time": 1628734727,
+      "author": {
+        "id": "6986471312684844034",
+        "unique_id": "hinamin_0529",
+        "nickname": "ひなみん🍑(21)",
+        "avatar": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/e304975e9dd373f98cb0ff332190cee8~c5_300x300.webp?x-expires=1639832400&x-signature=VH7AiAnL68quVx5lzjkFffWI8do%3D"
+      }
+    }, {
+      "video_id": "6820945347309767942",
+      "region": "US",
+      "title": "I finally got it! 🤗 #happyathome #foryou #fy",
+      "cover": "https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/3ab8e60dbb8a484d887dfa050a776ea4_1588125100?x-expires=1639767600&x-signature=Qs1%2FAXu3vOfM%2BKiA6ZiYsXs32Cs%3D",
+      "origin_cover": "https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/744bbdd2e8be45168c990a0dbf7d7ee1_1588125100~tplv-tiktokx-360p.image?x-expires=1639767600&x-signature=zW9uKO3qUQ7RWo6IizHDMaPc9uA%3D",
+      "play": "https://v16m-default.akamaized.net/2f87666412dea47af4d5332c509513b3/61bce9a8/video/tos/useast2a/tos-useast2a-pve-0068/742f5129add94c2e902ebbdc8c5c95bd/?a=0&br=2548&bt=1274&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=6&er=&ft=w.1R0FGgkag3-I&l=20211217134850010245243136263B3375&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=am83OWw1OjxndDMzNTczM0ApZzo0OTlnOjwzN2k0NDQ1aWdscmlvLjFjb2hfLS0wMTZzczM1YzQzLmEwNDY1YzU2MDY6Yw%3D%3D&vl=&vr=",
+      "wmplay": "https://v16m-default.akamaized.net/5e9aed25ec8edcb9ffa2bfda3940e718/61bce9a8/video/tos/useast2a/tos-useast2a-pve-0068/d656fbf43fa645eda58328f11e273d8f/?a=0&br=1960&bt=980&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=20211217134850010245243136263B3375&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=am83OWw1OjxndDMzNTczM0ApNjY4aGU2Ojs8NzhpMzM6OWdscmlvLjFjb2hfLS0wMTZzczRgMy8tLS81LS0uLmIvMWE6Yw%3D%3D&vl=&vr=",
+      "music": "https://p16-va-default.akamaized.net/obj/musically-maliva-obj/1657416601829430.mp3",
+      "play_count": 2960289,
+      "digg_count": 353810,
+      "comment_count": 1663,
+      "create_time": 1588125098,
+      "author": {
+        "id": "234640647603769344",
+        "unique_id": "ashleynocera",
+        "nickname": "Ashley Nocera",
+        "avatar": "https://p16-sign-va.tiktokcdn.com/musically-maliva-obj/1659345919372293~c5_300x300.webp?x-expires=1639832400&x-signature=OI8UuVs9H42R1SLiDqC%2FJn3SJ6c%3D"
+      }
+    }],
+    "cursor": "3",
     "hasMore": true
   }
 }
