@@ -11,7 +11,7 @@
  * 获取国家代码列表
  * 接口限制 无
  */
-$api = 'https://www.tikwm.com/api/regopm';
+$api = 'https://www.tikwm.com/api/region';
 
 $response = curl_request($api);
 $obj = json_decode($response);
