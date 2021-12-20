@@ -17,7 +17,11 @@ Tiktok短视频去水印
 
 + [x] [获取音乐内视频列表](#获取音乐内视频列表)
 
-+ [ ] 获取任意国家热门视频
++ [x] [获取音乐详情](#获取音乐详情)
+
++ [x] [获取国家代码列表](#获取国家代码列表)
+
++ [x] [获取任意国家热门视频](#获取任意国家热门视频)
 
 + [ ] 获取任意国家热门标签
 
@@ -38,9 +42,14 @@ Tiktok短视频去水印
 
 # 更新日志
 
+2021.12.20 更新
++ 增加 [获取音乐详情](#获取音乐详情) 接口
++ 增加 [获取任意国家热门视频](#获取任意国家热门视频) 接口
++ 增加 [获取国家代码列表](#获取国家代码列表) 接口
+
 2021.12.17 更新
-+增加 music_info 字段 音乐详情
-+增加 [获取音乐内视频列表](#获取音乐内视频列表) 接口
++ 增加 music_info 字段 音乐详情
++ 增加 [获取音乐内视频列表](#获取音乐内视频列表) 接口
 
 2021.12.16 更新
 + 增加 [获取关注列表](#获取关注列表) 接口
@@ -491,6 +500,192 @@ cursor - 0 (hasMore为true时，可传入上次请求返回的cursor加载更多
     "cursor": "3",
     "hasMore": true
   }
+}
+```
+
+</details>
+
+# 获取音乐详情
+
+<details>
+<summary>点击查看</summary>
+
+### 接口地址：```https://www.tikwm.com/api/music/info```
+
+### 请求方式：```get|post```
+
+### 参数
+
+```
+url - 音乐地址 支持（6788770563495185158 | https://vm.tiktok.com/xxxxxx/ | https://www.tiktok.com/music/originalljud-6788770563495185158）等多种链接格式
+```
+
+### 返回结果：Json
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "id": "6788770563495185158",
+    "title": "originalljud",
+    "play": "https://sf16-ies-music-va.tiktokcdn.com/obj/musically-maliva-obj/1657416601829430.mp3",
+    "cover": "https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/34f9971cce7ca50e1b5bd57dc5a79d40~c5_720x720.jpeg?x-expires=1640070000&x-signature=cwpN%2ByqfgNtYN6tQHlDGhrgprQ8%3D",
+    "author": "𝚛𝚘𝚋𝚕𝚘𝚡<33",
+    "original": true,
+    "duration": 9,
+    "album": ""
+  }
+}
+```
+
+</details>
+
+
+# 获取国家代码列表
+
+<details>
+<summary>点击查看</summary>
+
+### 接口地址：```https://www.tikwm.com/api/region```
+
+### 请求方式：```get|post```
+
+### 参数
+
+```
+无
+```
+
+### 返回结果：Json
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "TW": "Taiwan",
+    "JP": "Japan",
+    "KR": "Korea",
+    "US": "United States",
+    "...": "..."
+  }
+}
+```
+
+</details>
+
+
+# 获取任意国家热门视频
+
+<details>
+<summary>点击查看</summary>
+
+### 接口地址：```https://www.tikwm.com/api/feed/list```
+
+### 请求方式：```get|post```
+
+### 参数
+
+```
+region - 地区代码 如(JP TW US)
+count - 数量 1 ~ 20 默认10 (实际获取数量可能会比count少，因地区而异)
+```
+
+### 返回结果：Json
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "data": [{
+    "video_id": "7038251244372135170",
+    "region": "JP",
+    "title": "superhuman feat.超人技 #funny #funnyvideo #comedy #challenge#comedia #respect #reproduction #remix IB:@uespiiiii.1115",
+    "cover": "https://p16-sign-sg.tiktokcdn.com/large/tos-alisg-p-0037/cddfb3056acb477d86434f2bc73865e1_1638720570.jpeg?x-expires=1640005200&x-signature=xH3MoJlFdDhI4TOkWBz0kt%2FLbUE%3D",
+    "origin_cover": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/81ebea9dcf1f422cb5dd7ae3a877c47c_1638720569~tplv-tiktokx-360p.jpeg?x-expires=1640005200&x-signature=FHV7Kb8P9IFJzYiy7Ly9GAhufWA%3D",
+    "play": "https://v16m-default.akamaized.net/9086c2ee0708c2e63e253aca37b41bef/61c08a71/video/tos/alisg/tos-alisg-pve-0037/cdd690ce1036425ea6892a74713e0969/?a=1128&br=2290&bt=1145&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=2021122007512101022312104609005985&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=amk5ODU6ZmZoOTMzODgzNEApOThoNjY6Mzw5N2U0OTU5PGcpaHV2bmQxcm53ZmhpMS1yNGc1amAtLWQvLXNzLjM0MDIyYC5gXl4zNDQ1MDpjb3NiK2BtaHFmOg%3D%3D&vl=&vr=",
+    "wmplay": "https://v16m-default.akamaized.net/d435666d5e4a1185ab8d97838fa9c6ed/61c08a71/video/tos/alisg/tos-alisg-pve-0037/6a797e4563b5443e81d9e0083a35647d/?a=1128&br=1876&bt=938&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=2021122007512101022312104609005985&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=amk5ODU6ZmZoOTMzODgzNEApNWY5NzY0OWQ2N2lpODo1Z2cpaHV2bmQxcm53ZmhpMS1yNGc1amAtLWQvLXNzMjAwLzJjNGA2Ly4yX15iYDpjb3NiK2BtaHFmOg%3D%3D&vl=&vr=",
+    "music": "https://sf-tk-sg.ibytedtos.com/obj/tiktok-obj/7022247991247457026.mp3",
+    "music_info": {
+      "id": "7022248003805137665",
+      "title": "original sound - ISSEI/将来有名になる男",
+      "play": "https://sf-tk-sg.ibytedtos.com/obj/tiktok-obj/7022247991247457026.mp3",
+      "cover": "https://p16-sign-sg.tiktokcdn.com/aweme/1080x1080/tiktok-obj/1630967737620481.webp?x-expires=1640070000&x-signature=%2B%2FztmKsiVsuyNSnznB6KS8apopc%3D",
+      "author": "ISSEI/将来有名になる男",
+      "original": true,
+      "duration": 27,
+      "album": ""
+    },
+    "play_count": 2043045,
+    "digg_count": 160518,
+    "comment_count": 281,
+    "create_time": 1638720568,
+    "author": {
+      "id": "72416538129",
+      "unique_id": "issei0806",
+      "nickname": "ISSEI/将来有名になる男",
+      "avatar": "https://p16-sign-sg.tiktokcdn.com/tiktok-obj/1630967737620481~c5_300x300.webp?x-expires=1640070000&x-signature=lYAIn6rhaayRLSNoQomm1zjSQoQ%3D"
+    }
+  }, {
+    "video_id": "7028914159936867586",
+    "region": "JP",
+    "title": "",
+    "cover": "https://p16-sign-sg.tiktokcdn.com/large/tos-alisg-p-0037/f6277ce9dc674495b471cc9622eb7902.jpeg?x-expires=1640005200&x-signature=jiVnt%2ByKU90pB62IPccYI84aD1Q%3D",
+    "origin_cover": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/6b42b9d1f5c84856930aa43d6cb20967_1636546610~tplv-tiktokx-360p.jpeg?x-expires=1640005200&x-signature=DhBJajPdIh85GbT0LVcZLcsGSBA%3D",
+    "play": "https://v16m-default.akamaized.net/fe4ae61c57c98b7cac6e371bbb55b266/61c08a69/video/tos/alisg/tos-alisg-pve-0037c001/801316b174e14321b475f59d6b4d1abd/?a=1128&br=3134&bt=1567&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=2021122007512101022312104609005985&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M2dqaWg6ZmV1OTMzODczNEApMzQ2NGVpOmRlNztpN2k6OGcpaHV2bmQxcm53Zi5jbXNyNGdkMmAtLWQxLXNzMTU2LjNgYTBeYV40L2JfXzpjb3NiK2BtaHFmOg%3D%3D&vl=&vr=",
+    "wmplay": "https://v16m-default.akamaized.net/57ebfcb2099da4b3b1c877b9b7fac4ea/61c08a69/video/tos/alisg/tos-alisg-pve-0037c001/a8dd33bcbc37498196209b4241848966/?a=1128&br=2796&bt=1398&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=2021122007512101022312104609005985&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M2dqaWg6ZmV1OTMzODczNEApOTNnOjVlNTxlNzM2Zjk2O2cpaHV2bmQxcm53Zi5jbXNyNGdkMmAtLWQxLXNzYDUxNjEzMTQuYjRhY18uYDpjb3NiK2BtaHFmOg%3D%3D&vl=&vr=",
+    "music": "https://sf-tk-sg.ibytedtos.com/obj/tiktok-obj/7025889719040871169.mp3",
+    "music_info": {
+      "id": "7025889690838469378",
+      "title": "Bilang Pa Mama Mantu",
+      "play": "https://sf-tk-sg.ibytedtos.com/obj/tiktok-obj/7025889719040871169.mp3",
+      "cover": "https://p16-sign-sg.tiktokcdn.com/aweme/1080x1080/tos-alisg-avt-0068/2b9eccac2e23c194f568bf483d8c0f06.webp?x-expires=1640070000&x-signature=1JTV9lK%2F32PluOPIYgzOmgxbTSc%3D",
+      "author": "Nusantarahouse",
+      "original": true,
+      "duration": 20,
+      "album": ""
+    },
+    "play_count": 270340,
+    "digg_count": 31001,
+    "comment_count": 211,
+    "create_time": 1636546609,
+    "author": {
+      "id": "270898760635813888",
+      "unique_id": "readhevaaa",
+      "nickname": "🤍",
+      "avatar": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/c3f2882d18dc16dbe75e92ac176cc430~c5_300x300.webp?x-expires=1640070000&x-signature=ahtupdx%2FxWga%2FKz1Z1XfRYppEnA%3D"
+    }
+  }, {
+    "video_id": "7032215126509882625",
+    "region": "JP",
+    "title": "本当に可愛すぎる🤦‍♀️#石原さとみ",
+    "cover": "https://p16-sign-sg.tiktokcdn.com/large/tos-alisg-p-0037/bc248ce8da1b4ce3958bdf434c20cd84.jpeg?x-expires=1640005200&x-signature=HMK0O1vzxOYetuhVFOtui573hEA%3D",
+    "origin_cover": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/4d015ffabaa44e659cfc7fc90d63e66c_1637315176~tplv-tiktokx-360p.jpeg?x-expires=1640005200&x-signature=%2BM7GiqnSI5Lbu0PzE8wWOHIn%2Bmw%3D",
+    "play": "https://v16m-default.akamaized.net/826e08c00ad996447810b20b718ae508/61c08a74/video/tos/alisg/tos-alisg-pve-0037/75a38c99cf3244f5882bc0bb9921e873/?a=1128&br=2256&bt=1128&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=2021122007512101022312104609005985&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=anQ2bTk6ZnJxOTMzODgzNEApaWkzOTU7ZmU3Nzs5PDhlPGcpaHV2bmQxcm53ZjIzYG9yNG8xX2AtLWQvLXNzNjEyNTY0MzEwNV40NC8yMzpjb3NiK2BtaHFmOg%3D%3D&vl=&vr=",
+    "wmplay": "https://v16m-default.akamaized.net/e81cb0a212de982d3197bb73229e6a27/61c08a74/video/tos/alisg/tos-alisg-pve-0037/5bc571d4c5a04d5d87e6483a81138b0d/?a=1128&br=1986&bt=993&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=2021122007512101022312104609005985&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=anQ2bTk6ZnJxOTMzODgzNEApZDc6Z2U2Nzs8N2U6Omg8OGcpaHV2bmQxcm53ZjIzYG9yNG8xX2AtLWQvLXNzMl4xXzFgNS1fNmEwY2ItYTpjb3NiK2BtaHFmOg%3D%3D&vl=&vr=",
+    "music": "https://sf-tk-sg.ibytedtos.com/obj/tiktok-obj/7032215039738137345.mp3",
+    "music_info": {
+      "id": "7032215067965917953",
+      "title": "original sound - 💗💗💗",
+      "play": "https://sf-tk-sg.ibytedtos.com/obj/tiktok-obj/7032215039738137345.mp3",
+      "cover": "https://p16-sign-sg.tiktokcdn.com/aweme/1080x1080/tos-alisg-avt-0068/c49ff301fdf9ea96dad0523ee43781bb.webp?x-expires=1640070000&x-signature=5%2Fl0q%2BEypMxe8vqrVhEZWbVw2KQ%3D",
+      "author": "💗💗💗",
+      "original": true,
+      "duration": 26,
+      "album": ""
+    },
+    "play_count": 1451374,
+    "digg_count": 113319,
+    "comment_count": 219,
+    "create_time": 1637315175,
+    "author": {
+      "id": "6998514701470565378",
+      "unique_id": "aaa_4521",
+      "nickname": "💗💗💗",
+      "avatar": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/c49ff301fdf9ea96dad0523ee43781bb~c5_300x300.webp?x-expires=1640070000&x-signature=p0VWt3HmNL2t6l0%2F%2BN2N2EqVEu8%3D"
+    }
+  }]
 }
 ```
 

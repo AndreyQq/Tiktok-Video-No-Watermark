@@ -3,8 +3,54 @@
  * Tiktok短视频去水印
  * @Author yi005
  * @Date 2021.11.19
- * @Update 2021.12.14
+ * @Update 2021.12.20
  */
+
+
+/**
+ * 获取国家代码列表
+ * 接口限制 无
+ */
+$api = 'https://www.tikwm.com/api/regopm';
+
+$response = curl_request($api);
+$obj = json_decode($response);
+var_dump($obj);
+
+
+/**
+ * 获取任意国家热门视频列表
+ * 接口限制 1请求/10秒
+ * region 国家代码
+ */
+$api = 'https://www.tikwm.com/api/feed/list';
+$postData = [
+    'region' => 'JP',
+    'count' => 10
+];
+
+$response = curl_request($api . '?' . http_build_query($postData));
+$obj = json_decode($response);
+var_dump($obj);
+
+
+/**
+ * 获取音乐详情
+ * 接口限制 1请求/1秒
+ * 支持多种格式
+ * 6788770563495185158
+ * https://vm.tiktok.com/xxxxxx/
+ * https://www.tiktok.com/music/originalljud-6788770563495185158
+ */
+$api = 'https://www.tikwm.com/api/music/info';
+$music_id = '6788770563495185158';
+$postData = [
+    'url' => '6788770563495185158'
+];
+
+$response = curl_request($api . '?' . http_build_query($postData));
+$obj = json_decode($response);
+var_dump($obj);
 
 
 /**
