@@ -23,11 +23,13 @@ Tiktok短视频去水印
 
 + [x] [获取任意国家热门视频](#获取任意国家热门视频)
 
++ [x] [获取视频评论列表](#获取视频评论列表)
+
++ [x] [获取评论回复列表](#获取评论回复列表)
+
 + [ ] 获取任意国家热门标签
 
 + [ ] 通过标签获得视频列表
-
-+ [ ] 获取视频评论列表
 
 + [ ] 搜索视频
 
@@ -41,6 +43,11 @@ Tiktok短视频去水印
 #### 如果它对你有帮助，请支持一个star
 
 # 更新日志
+
+2021.12.23 更新
++ 增加 [获取视频评论列表](#获取视频评论列表) 接口
++ 增加 [获取评论回复列表](#获取评论回复列表) 接口
++ [视频去水印](#视频去水印) 增加 id 字段
 
 2021.12.20 更新
 + 增加 [获取音乐详情](#获取音乐详情) 接口
@@ -686,6 +693,126 @@ count - 数量 1 ~ 20 默认10 (实际获取数量可能会比count少，因地�
       "avatar": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/c49ff301fdf9ea96dad0523ee43781bb~c5_300x300.webp?x-expires=1640070000&x-signature=p0VWt3HmNL2t6l0%2F%2BN2N2EqVEu8%3D"
     }
   }]
+}
+```
+
+</details>
+
+
+# 获取视频评论列表
+
+<details>
+<summary>点击查看</summary>
+
+### 接口地址：```https://www.tikwm.com/api/comment/list```
+
+### 请求方式：```get|post```
+
+### 参数
+
+```
+url - 可以传入视频id or 链接 or 短链等
+count - 数量 1 ~ 50 默认20
+cursor - 传入上次请求返回的cursor加载下一页，默认0
+```
+
+### 返回结果：Json
+
+#### reply_total代表该评论的回复数
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "comments": [{
+      "id": "7044622953448211247",
+      "text": "yall pierce your kids ears and get them circumcised at birth bye😭",
+      "create_time": 1640204108,
+      "digg_count": 3688,
+      "reply_total": 106,
+      "user": {
+        "id": "6942236779949032453",
+        "region": "US",
+        "sec_uid": "MS4wLjABAAAAQr0Qu43Lo4LergoL419TiYfdjejBXW1QWRxB3O-933b5pcpp9bXf6YE_Si9qH4mJ",
+        "unique_id": "ogscarlettt",
+        "nickname": "scarlett🦦",
+        "signature": "7teen👺",
+        "avatar": "https://p16-sign-va.tiktokcdn.com/musically-maliva-obj/1594805258216454~c5_300x300.webp?x-expires=1640329200&x-signature=YfOn7%2B%2FACh1IgB18qtP7KLz3PV8%3D",
+        "aweme_count": 0,
+        "follower_count": 0,
+        "favoriting_count": 0,
+        "total_favorited": 0,
+        "youtube_channel_title": "",
+        "youtube_channel_id": "",
+        "twitter_name": "",
+        "twitter_id": ""
+      },
+      "status": 1
+    }],
+    "total": 4111,
+    "cursor": 1,
+    "hasMore": true
+  }
+}
+```
+
+</details>
+
+
+
+# 获取评论回复列表
+
+<details>
+<summary>点击查看</summary>
+
+### 接口地址：```https://www.tikwm.com/api/comment/reply```
+
+### 请求方式：```get|post```
+
+### 参数
+
+```
+comment_id - 评论id
+count - 数量 1 ~ 50 默认20
+cursor - 传入上次请求返回的cursor加载下一页，默认0
+```
+
+### 返回结果：Json
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "comments": [{
+      "id": "7044645747689915142",
+      "text": "I have a cane corso kennel. people don't realize how bad their ears get infected without being cropped. also their tales hurt you and them. lol",
+      "create_time": 1640209408,
+      "digg_count": 123,
+      "user": {
+        "id": "6905361194452091910",
+        "region": "US",
+        "sec_uid": "MS4wLjABAAAAG9Nliqj6TwTciapx2TZUVPg8O0LOS2GRlGnaYBn3hVVwf52hB0c3pmOsC5iyzixw",
+        "unique_id": "candcsmommabeth",
+        "nickname": "user9848869460800",
+        "signature": "",
+        "avatar": "https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/b22a53d00812e9e3738a065c000ff3cd~c5_300x300.webp?x-expires=1640329200&x-signature=ho8FxcRlV04hlHl7PuNLPmFbnls%3D",
+        "aweme_count": 0,
+        "follower_count": 0,
+        "favoriting_count": 0,
+        "total_favorited": 0,
+        "youtube_channel_title": "",
+        "youtube_channel_id": "",
+        "twitter_name": "",
+        "twitter_id": ""
+      },
+      "status": 1
+    }],
+    "total": 107,
+    "cursor": 1,
+    "hasMore": true
+  }
 }
 ```
 

@@ -3,8 +3,45 @@
  * Tiktok短视频去水印
  * @Author yi005
  * @Date 2021.11.19
- * @Update 2021.12.20
+ * @Update 2021.12.23
  */
+
+
+/**
+ * 获取评论的回复列表
+ *
+ **/
+$api = 'https://www.tikwm.com/api/comment/list';
+$params = [
+    'comment_id' => '7044622953448211247',
+    'count' => 10,
+    'cursor' => 0
+];
+
+$response = curl_request($api . '?' . http_build_query($params));
+$obj = json_decode($response);
+
+var_dump($obj);
+
+/**
+ * 获取视频的评论列表
+ * https://vt.tiktok.com/ZSey5hMUR/
+ * https://www.tiktok.com/@moosethecane/video/7044204887571238149
+ * 7044204887571238149
+ *
+ **/
+$api = 'https://www.tikwm.com/api/comment/list';
+$videoUrl = 'https://www.tiktok.com/@moosethecane/video/7044204887571238149';
+$params = [
+    'url' => $videoUrl,
+    'count' => 10,
+    'cursor' => 0
+];
+
+$response = curl_request($api . '?' . http_build_query($params));
+$obj = json_decode($response);
+
+var_dump($obj);
 
 
 /**
@@ -12,7 +49,7 @@
  * 接口限制 无
  */
 $api = 'https://www.tikwm.com/api/region';
-
+$api = 'https://www.tikwm.com/api/region';
 $response = curl_request($api);
 $obj = json_decode($response);
 var_dump($obj);
