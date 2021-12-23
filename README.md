@@ -27,6 +27,8 @@ Tiktok短视频去水印
 
 + [x] [获取评论回复列表](#获取评论回复列表)
 
++ [x] [获取用户喜欢的视频](#获取用户喜欢的视频)
+
 + [ ] 获取任意国家热门标签
 
 + [ ] 通过标签获得视频列表
@@ -45,6 +47,7 @@ Tiktok短视频去水印
 # 更新日志
 
 2021.12.23 更新
++ 增加 [获取用户喜欢的视频](#获取用户喜欢的视频) 接口
 + 增加 [获取视频评论列表](#获取视频评论列表) 接口
 + 增加 [获取评论回复列表](#获取评论回复列表) 接口
 + [视频去水印](#视频去水印) 增加 id 字段
@@ -817,3 +820,66 @@ cursor - 传入上次请求返回的cursor加载下一页，默认0
 ```
 
 </details>
+
+# 获取用户喜欢的视频
+
+<details>
+<summary>点击查看</summary>
+
+### 接口地址：```https://www.tikwm.com/api/user/favorite```
+
+### 请求方式：```get|post```
+
+### 参数
+
+```
+unique_id - 例 @mineodesu69 
+count - 10 (最小1 最大35) 获取数量
+cursor - 0 (hasMore为true时，可传入上次请求返回的cursor加载更多)
+```
+
+### 返回结果：Json
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "videos": [{
+      "video_id": "7038583619568389377",
+      "region": "JP",
+      "title": "tiktok、airdropできるようになったってマジ？😳夜景デート風🌃Tokyo🇯🇵🗼#渋谷スカイ",
+      "cover": "https://p16-sign-sg.tiktokcdn.com/obj/tos-alisg-p-0037/c16c2d0d14c34b8983c11ea04903fca4_1638797959?x-expires=1640271600&x-signature=YCeylz2QSChiPxStRPp0xW53dd8%3D",
+      "origin_cover": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/a14b9128a95345d4a3b3a799fc1c9c45_1638797958~tplv-tiktokx-360p.jpeg?x-expires=1640271600&x-signature=IWpj1kIqmX55adHf%2B19jsML6A%2Fg%3D",
+      "play": "https://v16m-default.akamaized.net/aadbaa6bfae57b861581088669f34571/61c4914e/video/tos/alisg/tos-alisg-pve-0037/f1affac75c00441e946a35a574ac919d/?a=0&br=5736&bt=2868&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=2021122309095201024407504816DDBC87&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=and1dzc6ZjM0OTMzODgzNEApNGc4Mzk7ZTs8N2g2NTY4OWdwYzVqcjRvMmtgLS1kLy1zczYtMGNiNjEtXjAxMWMwLzE6Yw%3D%3D&vl=&vr=",
+      "wmplay": "https://v16m-default.akamaized.net/942c75fa4c2b9beb5dec90ed9682a8b8/61c4914e/video/tos/alisg/tos-alisg-pve-0037/4affaf86da0e4e83b3a04bcc960a9247/?a=0&br=4290&bt=2145&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=2021122309095201024407504816DDBC87&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=and1dzc6ZjM0OTMzODgzNEApNDc2NWU4ZTxpNzM7NTs2OWdwYzVqcjRvMmtgLS1kLy1zc15jYmBhLTViLmM1X2E1NmM6Yw%3D%3D&vl=&vr=",
+      "music": "https://sf16-sg-default.akamaized.net/obj/tiktok-obj/69d1ca9243c51693589717e7b22ec9d5.mp3",
+      "music_info": {
+        "id": "6827024348956707585",
+        "title": "original sound - sonshiu",
+        "play": "https://sf16-sg-default.akamaized.net/obj/tiktok-obj/69d1ca9243c51693589717e7b22ec9d5.mp3",
+        "cover": "https://p16-sign-sg.tiktokcdn.com/aweme/1080x1080/tiktok-obj/1630687017376769.webp?x-expires=1640336400&x-signature=Fq79oDcG11yqNTRV24lTuJgQdr4%3D",
+        "author": "Patrika",
+        "original": true,
+        "duration": 14,
+        "album": ""
+      },
+      "play_count": 373833,
+      "digg_count": 54513,
+      "comment_count": 1486,
+      "create_time": 1638797957,
+      "author": {
+        "id": "75640309710",
+        "unique_id": "0906yu_rin",
+        "nickname": "ゆーり🍎🐥(21)yuri",
+        "avatar": "https://p16-sign-sg.tiktokcdn.com/tiktok-obj/1665329740659714~c5_300x300.webp?x-expires=1640336400&x-signature=8ac7jcVRA9VomO81s0DeWcl12uU%3D"
+      }
+    }],
+    "cursor": "1638823002000",
+    "hasMore": true
+  }
+}
+```
+
+</details>
+

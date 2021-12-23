@@ -8,6 +8,25 @@
 
 
 /**
+ * 获取用户喜欢的视频
+ * 接口限制 1请求/10秒
+ */
+$api = 'https://www.tikwm.com/api/user/favorite';
+$unique_id = '@mineodesu69';
+$postData = [
+    'unique_id' => $unique_id,
+    'count' => 10,
+    'cursor' => 0
+];
+
+$response = curl_request($api . '?' . http_build_query($postData));
+$obj = json_decode($response);
+var_dump($obj);
+
+
+
+
+/**
  * 获取评论的回复列表
  *
  **/
