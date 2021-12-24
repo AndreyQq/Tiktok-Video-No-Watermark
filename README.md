@@ -46,6 +46,9 @@ Tiktok短视频去水印
 
 # 更新日志
 
+2021.12.24 更新
++ 增加 HD视频(高比特率)，在 [视频去水印](#视频去水印) 接口
+
 2021.12.23 更新
 + 为防止滥用，api日请求限额 20000/天
 + 增加 [获取用户喜欢的视频](#获取用户喜欢的视频) 接口
@@ -114,9 +117,9 @@ Tiktok短视频去水印
 ### 参数
 
 ```
-plat - 平台（tik） 不传默认为tik
-
 url - 短视频地址 支持（6996665911927262466 | https://vt.tiktok.com/XXXXXX | https://www.tiktok.com/@umay_874/video/6996665911927262466）等多种链接格式
+
+hd - 默认0 传入1为获取高清视频(会增加总请求时间)
 ```
 
 ### 返回结果：Json
@@ -132,6 +135,7 @@ url - 短视频地址 支持（6996665911927262466 | https://vt.tiktok.com/XXXXX
     "origin_cover": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/15f610be8e2d4818bf049eda670e3611_1629038230~tplv-tiktokx-360p.jpeg?x-expires=1638532800&x-signature=S6nJz1rmuztGs1rADsKePgg37HY%3D",
     "play": "https://v16m-default.akamaized.net/4cc86938b3e2a3695b9127eb86b397b6/61aa0823/video/tos/alisg/tos-alisg-pve-0037c001/098a42acd7874257961c7ec7ea77a4cc/?a=0&br=1788&bt=894&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=6&er=&ft=w.1R0FGgkag3-I&l=202112030605450102230821640703B9F3&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=ajRocDk6ZjZsNzMzODczNEApZ2lnO2k1aWQ7Nzk4Zzk2ZGdkbm5ucjRvYWBgLS1kMS1zc2BjXy9iMTMwMDUzMTZeMmI6Yw%3D%3D&vl=&vr=",
     "wmplay": "https://v16m-default.akamaized.net/555d16254282b184d654b17338a68632/61aa0823/video/tos/alisg/tos-alisg-pve-0037c001/433818c0e6eb4554a8dc70fa12f76373/?a=0&br=1706&bt=853&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=w.1R0FGgkag3-I&l=202112030605450102230821640703B9F3&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=ajRocDk6ZjZsNzMzODczNEApaWZpNTNmZDs5N2Q0ZDo3M2dkbm5ucjRvYWBgLS1kMS1zc15fNS9gMl4vNmA2MmIwMmE6Yw%3D%3D&vl=&vr=",
+    "hdplay": "https://v16.tiktokcdn.com/a305bf623f89e022180c7da4b3c58f0a/61c626df/video/tos/alisg/tos-alisg-pv-0037c001/95c8cf22104b4aa39ca2c84b6f6dc19f/?a=1180&br=5320&bt=2660&cd=0%7C0%7C0&ch=0&cr=0&cs=&cv=1&dr=0&ds=6&er=&ft=sfuyEXk_4kag3&l=202112241400210102452450111CF891D5&lr=&mime_type=video_mp4&net=0&pl=0&qs=13&rc=ajRocDk6ZjZsNzMzODczNEApanR0dHg6dWdmZjMzajczeWdkbm5ucjRvYWBgLS1kMS1zc2QuYmozNGAwZjEtLTIxLS46Yw%3D%3D&vl=&vr=",
     "music": "https://p16-va-default.akamaized.net/obj/musically-maliva-obj/6842547937583631110.mp3",
     "play_count": 56297,
     "digg_count": 5199,

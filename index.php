@@ -24,8 +24,6 @@ $obj = json_decode($response);
 var_dump($obj);
 
 
-
-
 /**
  * 获取评论的回复列表
  *
@@ -186,8 +184,8 @@ $api = 'https://www.tikwm.com/api/';
  **/
 $tikUrl = 'https://www.tiktok.com/@umay_874/video/6996665911927262466';
 $postData = [
-    //'plat' => 'tik',   //Tiktok传 tik  不传默认tiktok
-    'url' => $tikUrl
+    'url' => $tikUrl,
+    'hd' => 0   //传入1 获取高比特率视频
 ];
 
 $response = curl_request($api . '?' . http_build_query($postData));
