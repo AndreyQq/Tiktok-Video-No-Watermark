@@ -29,11 +29,11 @@ Tiktok短视频去水印
 
 + [x] [获取用户喜欢的视频](#获取用户喜欢的视频)
 
++ [x] [搜索视频](#搜索视频)
+
 + [ ] 获取任意国家热门标签
 
 + [ ] 通过标签获得视频列表
-
-+ [ ] 搜索视频
 
 # 在线测试
 
@@ -45,6 +45,9 @@ Tiktok短视频去水印
 #### 如果它对你有帮助，请支持一个star
 
 # 更新日志
+
+2021.12.25 更新
++ 增加 [搜索视频](#搜索视频) 接口
 
 2021.12.24 更新
 + 增加 HD视频(高比特率)，在 [视频去水印](#视频去水印) 接口
@@ -882,6 +885,69 @@ cursor - 0 (hasMore为true时，可传入上次请求返回的cursor加载更多
     }],
     "cursor": "1638823002000",
     "hasMore": true
+  }
+}
+```
+
+</details>
+
+
+# 搜索视频
+
+<details>
+<summary>点击查看</summary>
+
+### 接口地址：```https://www.tikwm.com/api/feed/search```
+
+### 请求方式：```get|post```
+
+### 参数
+
+```
+keywords - 例 踊ってみた
+count - 10 (最小1 最大30) 获取数量
+cursor - 0 (hasMore为true时，可传入上次请求返回的cursor加载更多)
+```
+
+### 返回结果：Json
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "videos": [{
+      "video_id": "7029978737823272193",
+      "region": "JP",
+      "title": "リクエストにお応えして堤アナ踊ってみた💃#堤礼実 #踊ってみた #めざまし8しか勝たん #朝8時はめざまし8 #DanceStudioCielo",
+      "cover": "https://p16-sign-sg.tiktokcdn.com/obj/tos-alisg-p-0037/59a4404355084892979e7c845cf2c228_1636794478?x-expires=1640466000&x-signature=XpNyf1O%2BHY6n8g6LgXGRvi5UNFk%3D",
+      "origin_cover": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/3954bffa3e6b40a0a141298356c2afb9_1636794477~tplv-tiktokx-360p.jpeg?x-expires=1640466000&x-signature=sOuRMc0z%2BZQ%2FcXPNXy%2BDM5Ti2Vw%3D",
+      "play": "https://v16.tiktokcdn.com/adcd31556a4b1da0ba4a62ffac87f472/61c78d72/video/tos/alisg/tos-alisg-pve-0037/c65f3f6934b64f15b7c8d2d2b91aec02/?a=1233&br=3256&bt=1628&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=xo0Z~44pgumInz7T&l=2021122515295901018906604901D10A43&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M2c3ZWg6ZnNyOTMzODgzNEApNWlnZGg7ZWQ0Nzc7O2RmM2cxbjI1cjQwLTRgLS1kLy1zczA0MV8tNTVjXy4xX2AyNDI6Yw%3D%3D&vl=&vr=",
+      "wmplay": "https://v16.tiktokcdn.com/b4a490d54f4ee994f2af04e82531f622/61c78d72/video/tos/alisg/tos-alisg-pve-0037/e83604561a014e179b3c47a7412ab39c/?a=1233&br=2698&bt=1349&cd=0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=xo0Z~44pgumInz7T&l=2021122515295901018906604901D10A43&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M2c3ZWg6ZnNyOTMzODgzNEApOmYzPGdpO2VoN2ZlOTNnZWcxbjI1cjQwLTRgLS1kLy1zczAuMS1iNl9eYl9iL2NjMTY6Yw%3D%3D&vl=&vr=",
+      "music": "",
+      "music_info": {
+        "id": "7002798693380261889",
+        "title": "The Feels",
+        "play": "",
+        "cover": "https://p16-amd-va.tiktokcdn.com/img/tos-useast2a-v-2774/624969d6be8247ff88fde04a996efec7~c5_720x720.jpeg",
+        "author": "",
+        "original": false,
+        "duration": 57,
+        "album": "The Feels"
+      },
+      "play_count": 8237295,
+      "digg_count": 577778,
+      "comment_count": 4658,
+      "create_time": 1636794475,
+      "author": {
+        "id": "6940469576224621570",
+        "unique_id": "mezamashi8tiktok",
+        "nickname": "めざまし8",
+        "avatar": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/8de53cc63d6c90194872e0aa156ed294~c5_300x300.webp?x-expires=1640530800&x-signature=F3ng4SGSdmAoNn5Fg7tfedsjho4%3D"
+      }
+    }],
+    "cursor": 1,
+    "hasMore": 1
   }
 }
 ```

@@ -8,6 +8,22 @@
 
 
 /**
+ * 搜索视频
+ * 接口限制 1请求/10秒
+ */
+$api = 'https://www.tikwm.com/api/feed/search';
+$keywords = '踊ってみた';
+$postData = [
+    'keywords' => $keywords,
+    'count' => 10,
+    'cursor' => 0
+];
+
+$response = curl_request($api . '?' . http_build_query($postData));
+$obj = json_decode($response);
+var_dump($obj);
+
+/**
  * 获取用户喜欢的视频
  * 接口限制 1请求/10秒
  */
